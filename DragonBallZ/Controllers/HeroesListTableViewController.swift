@@ -2,7 +2,7 @@ import UIKit
 
 final class HeroesListTableViewController: UITableViewController {
     
-    var heroesList: [Hero]
+    let heroesList: [Hero]
     
     init(heroesList: [Hero]) {
         self.heroesList = heroesList
@@ -55,6 +55,10 @@ final class HeroesListTableViewController: UITableViewController {
             }
         }
         task.resume()
+        
+        //pasamos la referencia del "NavigationController" para que la celda pueda manejarla
+        cell.navigationControllerReference = self.navigationController
+        
         return cell
     }
     
