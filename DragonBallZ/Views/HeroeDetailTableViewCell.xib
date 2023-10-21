@@ -95,9 +95,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="heroDescription" destination="Rr3-y6-G8V" id="3KW-UN-xYf"/>
-                <outlet property="heroImage" destination="WYE-Xu-cQP" id="hO0-V6-b9T"/>
-                <outlet property="heroNameTitle" destination="qAR-mo-LKv" id="BPv-d7-vZ1"/>
+                <outlet property="descriptionOfCell" destination="Rr3-y6-G8V" id="3KW-UN-xYf"/>
+                <outlet property="imageOfCell" destination="WYE-Xu-cQP" id="hO0-V6-b9T"/>
+                <outlet property="titleOfCell" destination="qAR-mo-LKv" id="BPv-d7-vZ1"/>
             </connections>
             <point key="canvasLocation" x="-22.900763358778626" y="234.50704225352115"/>
         </tableViewCell>

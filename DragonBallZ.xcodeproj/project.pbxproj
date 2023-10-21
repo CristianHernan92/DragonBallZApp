@@ -13,15 +13,13 @@
 		F16871092AD633A60032BB4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F16871072AD633A60032BB4B /* LaunchScreen.storyboard */; };
 		F16871132AD634270032BB4B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16871112AD634270032BB4B /* LoginViewController.swift */; };
 		F16871142AD634270032BB4B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F16871122AD634270032BB4B /* LoginViewController.xib */; };
-		F16871182AD634820032BB4B /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16871172AD634820032BB4B /* NetworkModel.swift */; };
+		F16871182AD634820032BB4B /* DragonBallZNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16871172AD634820032BB4B /* DragonBallZNetworkModel.swift */; };
 		F1694EE52ADA32AA00892A1E /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1694EE42ADA32AA00892A1E /* Hero.swift */; };
-		F1694EE72ADA349300892A1E /* HeroTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1694EE62ADA349300892A1E /* HeroTransformation.swift */; };
-		F1694EFC2ADE402E00892A1E /* HeroeDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1694EFA2ADE402E00892A1E /* HeroeDetailTableViewController.swift */; };
-		F1694EFD2ADE402E00892A1E /* HeroeDetailTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1694EFB2ADE402E00892A1E /* HeroeDetailTableViewController.xib */; };
 		F1694F002ADE407200892A1E /* HeroeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1694EFE2ADE407200892A1E /* HeroeDetailTableViewCell.swift */; };
 		F1694F012ADE407200892A1E /* HeroeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1694EFF2ADE407200892A1E /* HeroeDetailTableViewCell.xib */; };
-		F1CCD8F92AD787E500D40ADA /* HeroesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CCD8F72AD787E500D40ADA /* HeroesListTableViewController.swift */; };
-		F1CCD8FA2AD787E500D40ADA /* HeroesListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1CCD8F82AD787E500D40ADA /* HeroesListTableViewController.xib */; };
+		F1694F062AE1AF6F00892A1E /* HeroTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1694F052AE1AF6F00892A1E /* HeroTransformation.swift */; };
+		F1CCD8F92AD787E500D40ADA /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CCD8F72AD787E500D40ADA /* TableViewController.swift */; };
+		F1CCD8FA2AD787E500D40ADA /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1CCD8F82AD787E500D40ADA /* TableViewController.xib */; };
 		F1CCD9012AD78D9A00D40ADA /* HeroeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CCD8FF2AD78D9A00D40ADA /* HeroeTableViewCell.swift */; };
 		F1CCD9022AD78D9A00D40ADA /* HeroeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1CCD9002AD78D9A00D40ADA /* HeroeTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -35,15 +33,13 @@
 		F168710A2AD633A60032BB4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F16871112AD634270032BB4B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F16871122AD634270032BB4B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		F16871172AD634820032BB4B /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
+		F16871172AD634820032BB4B /* DragonBallZNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBallZNetworkModel.swift; sourceTree = "<group>"; };
 		F1694EE42ADA32AA00892A1E /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
-		F1694EE62ADA349300892A1E /* HeroTransformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTransformation.swift; sourceTree = "<group>"; };
-		F1694EFA2ADE402E00892A1E /* HeroeDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroeDetailTableViewController.swift; sourceTree = "<group>"; };
-		F1694EFB2ADE402E00892A1E /* HeroeDetailTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroeDetailTableViewController.xib; sourceTree = "<group>"; };
 		F1694EFE2ADE407200892A1E /* HeroeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroeDetailTableViewCell.swift; sourceTree = "<group>"; };
 		F1694EFF2ADE407200892A1E /* HeroeDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroeDetailTableViewCell.xib; sourceTree = "<group>"; };
-		F1CCD8F72AD787E500D40ADA /* HeroesListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListTableViewController.swift; sourceTree = "<group>"; };
-		F1CCD8F82AD787E500D40ADA /* HeroesListTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroesListTableViewController.xib; sourceTree = "<group>"; };
+		F1694F052AE1AF6F00892A1E /* HeroTransformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTransformation.swift; sourceTree = "<group>"; };
+		F1CCD8F72AD787E500D40ADA /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		F1CCD8F82AD787E500D40ADA /* TableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
 		F1CCD8FF2AD78D9A00D40ADA /* HeroeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroeTableViewCell.swift; sourceTree = "<group>"; };
 		F1CCD9002AD78D9A00D40ADA /* HeroeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroeTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,9 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				F16871112AD634270032BB4B /* LoginViewController.swift */,
-				F1CCD8F72AD787E500D40ADA /* HeroesListTableViewController.swift */,
+				F1CCD8F72AD787E500D40ADA /* TableViewController.swift */,
 				F1CCD8FF2AD78D9A00D40ADA /* HeroeTableViewCell.swift */,
-				F1694EFA2ADE402E00892A1E /* HeroeDetailTableViewController.swift */,
 				F1694EFE2ADE407200892A1E /* HeroeDetailTableViewCell.swift */,
 			);
 			path = Controllers;
@@ -106,9 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				F16871122AD634270032BB4B /* LoginViewController.xib */,
-				F1CCD8F82AD787E500D40ADA /* HeroesListTableViewController.xib */,
+				F1CCD8F82AD787E500D40ADA /* TableViewController.xib */,
 				F1CCD9002AD78D9A00D40ADA /* HeroeTableViewCell.xib */,
-				F1694EFB2ADE402E00892A1E /* HeroeDetailTableViewController.xib */,
 				F1694EFF2ADE407200892A1E /* HeroeDetailTableViewCell.xib */,
 			);
 			path = Views;
@@ -117,9 +111,9 @@
 		F16871162AD634650032BB4B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F16871172AD634820032BB4B /* NetworkModel.swift */,
+				F16871172AD634820032BB4B /* DragonBallZNetworkModel.swift */,
 				F1694EE42ADA32AA00892A1E /* Hero.swift */,
-				F1694EE62ADA349300892A1E /* HeroTransformation.swift */,
+				F1694F052AE1AF6F00892A1E /* HeroTransformation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,10 +176,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1694EFD2ADE402E00892A1E /* HeroeDetailTableViewController.xib in Resources */,
 				F1CCD9022AD78D9A00D40ADA /* HeroeTableViewCell.xib in Resources */,
 				F16871092AD633A60032BB4B /* LaunchScreen.storyboard in Resources */,
-				F1CCD8FA2AD787E500D40ADA /* HeroesListTableViewController.xib in Resources */,
+				F1CCD8FA2AD787E500D40ADA /* TableViewController.xib in Resources */,
 				F1694F012ADE407200892A1E /* HeroeDetailTableViewCell.xib in Resources */,
 				F16871062AD633A60032BB4B /* Assets.xcassets in Resources */,
 				F16871142AD634270032BB4B /* LoginViewController.xib in Resources */,
@@ -201,13 +194,12 @@
 			files = (
 				F16871132AD634270032BB4B /* LoginViewController.swift in Sources */,
 				F1CCD9012AD78D9A00D40ADA /* HeroeTableViewCell.swift in Sources */,
-				F1694EFC2ADE402E00892A1E /* HeroeDetailTableViewController.swift in Sources */,
 				F16870FD2AD633A40032BB4B /* AppDelegate.swift in Sources */,
 				F1694F002ADE407200892A1E /* HeroeDetailTableViewCell.swift in Sources */,
-				F1CCD8F92AD787E500D40ADA /* HeroesListTableViewController.swift in Sources */,
-				F1694EE72ADA349300892A1E /* HeroTransformation.swift in Sources */,
-				F16871182AD634820032BB4B /* NetworkModel.swift in Sources */,
+				F1CCD8F92AD787E500D40ADA /* TableViewController.swift in Sources */,
+				F16871182AD634820032BB4B /* DragonBallZNetworkModel.swift in Sources */,
 				F1694EE52ADA32AA00892A1E /* Hero.swift in Sources */,
+				F1694F062AE1AF6F00892A1E /* HeroTransformation.swift in Sources */,
 				F16870FF2AD633A40032BB4B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -3,21 +3,25 @@ import UIKit
 class HeroeDetailTableViewCell: UITableViewCell {
     
     weak var navigationControllerReference: UINavigationController? = nil
-
-   //MARK: OUTLETS
-    @IBOutlet weak var heroNameTitle: UILabel!
-    @IBOutlet weak var heroDescription: UILabel!
-    @IBOutlet weak var heroImage: UIImageView!
     
-   //MARK: ACTIONS
+    //MARK: OUTLETS
+    @IBOutlet weak var titleOfCell: UILabel!
+    @IBOutlet weak var descriptionOfCell: UILabel!
+    @IBOutlet weak var imageOfCell: UIImageView!
+    
+    //MARK: ACTIONS
     @IBAction func transformationsButtonDidTap(_ sender: Any) {
-//        //creamos y mostramos el HeroeDetailTableViewController con el listado de heroes
-//        if let navigationControllerReference {
+        //hacemos la llamada a la base de datos trayendo el listado de las transformaciones del heroe
+        DragonBallZNetworkModel.getHeroeTransformations{data, error in
+            guard error == nil else {
+                print("Error: \(String(describing: error))")
+                return
+            }
+            
+            //creamos y mostramos la tableview con el listado de las transformaciones del heroe
 //            DispatchQueue.main.async {
-//                navigationControllerReference.pushViewController(
-//                    HeroeDetailTableViewController(heroNameTitle: self.heroTitle.text!, heroDescription: self.heroDescription.text!, heroImage: self.heroImage.image!), animated: true
-//                )
+//                self.navigationController?.pushViewController(HeroesListTableViewController(heroesList: data), animated: true)
 //            }
-//        }
+        }
     }
 }

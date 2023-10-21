@@ -11,28 +11,34 @@ final class LoginViewController: UIViewController {
     //MARK: Actions
     @IBAction func LoginButtonAction(_ sender: UIButton) {
         
-        //NetworkModel.login(email: EmailTextField.text!, password: PasswordTextField.text!)
-        
-        NetworkModel.login(email: "cristianhernandelrio@gmail.com", password: "KQFhbcuj9Hwgf39") { token, error in
-            guard error==nil else {
-                print("Error: \(String(describing: error))")
-                return
-            }
-            
-            //hacemos la llamada a la base de datos trayendo toda la lista de los heroes
-            NetworkModel.getHeroesList(token: token){data, error in
-                guard error == nil else {
+        //DragonBallZNetworkModel.login(email: EmailTextField.text!, password: PasswordTextField.text!)
+        DragonBallZNetworkModel.login(email: "cristianhernandelrio@gmail.com", password: "KQFhbcuj9Hwgf39") { error in
+                guard error==nil else {
                     print("Error: \(String(describing: error))")
                     return
                 }
-                
-                //creamos y mostramos la tableview con el listado de heroes
-                DispatchQueue.main.async {
-                    let HeroesListTableViewController = HeroesListTableViewController(heroesList: data)
-                    self.navigationController?.pushViewController(HeroesListTableViewController, animated: true)
-                }
-                
+            
+                //hacemos la llamada a la base de datos trayendo toda la lista de los heroes
+                DragonBallZNetworkModel.getHeroesList{data, error in
+                    guard error == nil else {
+                        print("Error: \(String(describing: error))")
+                        return
+                    }
+                    
+                    //creamos el array de tipo "CellData" que contrendrá los datos para las celdas de la tabla
+                    var cellDataList : [CellData] = []
+                    for Hero in (data as [Hero]) {
+                        cellDataList.append(CellData.init(title: Hero.name, description: Hero.description, image: (URL:Hero.photo,UIImage:nil)))
+                    }
+                    
+                    //creamos y mostramos la tableview con el listado de heroes
+                    DispatchQueue.main.async {
+                        self.navigationController?.pushViewController(
+                            TableViewController(navigatorTitle: "Heroes", hidesBackButtonOfNavigator: true, cellDataList: cellDataList,nameOfCellToUse: "HeroeTableViewCell", identifierOfCellToUse: "HeroCell", heigthOfCell: 125.0),
+                            animated: true)
+                    }
             }
         }
+        
     }
 }
