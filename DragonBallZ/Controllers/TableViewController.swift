@@ -54,9 +54,10 @@ final class TableViewController: UITableViewController {
         func returnHeroeTableViewCellFilled() -> HeroeTableViewCell{
             //instanciamos la celda peronalizada que registramos más arriba en la tabla y lo casteamos al tipo de dicha celda para poder luego asignarles valor a sus atributos
             let cell = tableView.dequeueReusableCell(withIdentifier: identifierOfCellToUse, for: indexPath) as! HeroeTableViewCell
-            cell.descriptionOfCell.text = cellDataList[indexPath.row].description
+            cell.heroId = cellDataList[indexPath.row].heroId
             cell.titleOfCell.text = cellDataList[indexPath.row].title
-                    
+            cell.descriptionOfCell.text = cellDataList[indexPath.row].description
+                
             let task = URLSession.shared.dataTask(with: cellDataList[indexPath.row].image.URL!) { (data, response, error) in
                         guard error == nil else {
                             print("Error: \(String(describing: error))")
@@ -87,12 +88,19 @@ final class TableViewController: UITableViewController {
         func returnHeroeDetailTableViewCellFilled() -> HeroeDetailTableViewCell{
             //instanciamos la celda peronalizada que registramos más arriba en la tabla y lo casteamos al tipo de dicha celda para poder luego asignarles valor a sus atributos
             let cell = tableView.dequeueReusableCell(withIdentifier: identifierOfCellToUse, for: indexPath) as! HeroeDetailTableViewCell
-            cell.descriptionOfCell.text = cellDataList[indexPath.row].description
+            cell.heroId = cellDataList[indexPath.row].heroId
             cell.titleOfCell.text = cellDataList[indexPath.row].title
+            cell.descriptionOfCell.text = cellDataList[indexPath.row].description
             cell.imageOfCell.image = cellDataList[indexPath.row].image.UIImage
                     
             //pasamos la referencia del "NavigationController" para que la celda pueda manejarla
             cell.navigationControllerReference = self.navigationController
+            
+            //si no hay id quiere decir que es una vista de una transformación asique se debe ocultar el botón de transformaciones
+            if(cellDataList[indexPath.row].heroId == nil){
+                cell.buttonOfTransformations.isEnabled = false
+                cell.buttonOfTransformations.isHidden = true
+            }
                     
             return cell
         }
@@ -109,4 +117,5 @@ struct CellData {
     let title: String
     let description: String
     let image: (URL:URL?,UIImage:UIImage?)
+    let heroId: String?
 }

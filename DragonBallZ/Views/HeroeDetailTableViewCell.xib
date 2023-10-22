@@ -37,26 +37,26 @@
                                         <rect key="frame" x="10" y="0.0" width="410" height="475"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Goku" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAR-mo-LKv" userLabel="heroNameTitle">
-                                                <rect key="frame" x="0.0" y="0.0" width="410" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="410" height="67.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rr3-y6-G8V" userLabel="heroDescription">
-                                                <rect key="frame" x="0.0" y="20.333333333333314" width="410" height="142.66666666666666"/>
+                                                <rect key="frame" x="0.0" y="67.3333333333333" width="410" height="157.66666666666663"/>
                                                 <string key="text">Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</string>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zKZ-s3-PNg" userLabel="ButtonContainer">
-                                                <rect key="frame" x="0.0" y="163" width="410" height="312"/>
+                                                <rect key="frame" x="0.0" y="225" width="410" height="250"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7dF-FS-4tr" userLabel="Cuña/espacio">
-                                                        <rect key="frame" x="0.0" y="0.0" width="410" height="269.33333333333331"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="410" height="207.33333333333334"/>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJh-fe-T9s" userLabel="transformationsButton">
-                                                        <rect key="frame" x="0.0" y="269.33333333333337" width="410" height="42.666666666666686"/>
+                                                        <rect key="frame" x="0.0" y="207.33333333333337" width="410" height="42.666666666666657"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled" title="Transformaciones">
                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="24"/>
@@ -67,7 +67,7 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="312" id="0sW-XT-XnS"/>
+                                                    <constraint firstAttribute="height" constant="250" id="0sW-XT-XnS"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -95,11 +95,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="buttonOfTransformations" destination="MJh-fe-T9s" id="ost-Zt-DTa"/>
                 <outlet property="descriptionOfCell" destination="Rr3-y6-G8V" id="3KW-UN-xYf"/>
                 <outlet property="imageOfCell" destination="WYE-Xu-cQP" id="hO0-V6-b9T"/>
                 <outlet property="titleOfCell" destination="qAR-mo-LKv" id="BPv-d7-vZ1"/>
             </connections>
-            <point key="canvasLocation" x="-22.900763358778626" y="234.50704225352115"/>
+            <point key="canvasLocation" x="-22.900763358778626" y="234.1549295774648"/>
         </tableViewCell>
     </objects>
 </document>

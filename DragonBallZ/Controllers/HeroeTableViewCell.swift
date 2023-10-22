@@ -3,7 +3,8 @@ import UIKit
 class HeroeTableViewCell: UITableViewCell {
     
     weak var navigationControllerReference: UINavigationController? = nil
-
+    var heroId: String? = nil
+    
     //MARK: OUTLETS
     @IBOutlet weak var descriptionOfCell: UILabel!
     @IBOutlet weak var titleOfCell: UILabel!
@@ -15,7 +16,7 @@ class HeroeTableViewCell: UITableViewCell {
         
             //creamos el array de tipo "CellData" que contrendrá los datos para la celda de la tabla
             var cellDataList : [CellData] = []
-            cellDataList.append(CellData.init(title: self.titleOfCell.text!, description: self.descriptionOfCell.text!, image: (URL:nil,UIImage:self.imageOfCell.image!)))
+            cellDataList.append(CellData.init(title: self.titleOfCell.text!, description: self.descriptionOfCell.text!, image: (URL:nil,UIImage:self.imageOfCell.image!),heroId: self.heroId))
             
             DispatchQueue.main.async {
                 self.navigationControllerReference!.pushViewController(

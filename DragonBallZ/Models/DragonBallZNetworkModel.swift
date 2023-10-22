@@ -130,7 +130,7 @@ final class DragonBallZNetworkModel{
     
     //"/api/heros/tranformations"
     //devolvemos la lista de transformaciones del heroe
-    static func getHeroeTransformations (completion: @escaping ([HeroTransformation],NetworkError?) -> Void ){
+    static func getHeroeTransformations (heroId: String,completion: @escaping ([HeroTransformation],NetworkError?) -> Void ){
         
         //1)armamos los componentes de la url y mediante ella creamos la url que se le va a pasar al request
         var URLComponents = URLComponents()
@@ -141,15 +141,14 @@ final class DragonBallZNetworkModel{
             completion([],NetworkError.malformedUrl)
             return
         }
-        URLComponents.queryItems = [URLQueryItem(name: "name", value: "")]
-        
+        URLComponents.queryItems = [URLQueryItem(name: "id", value: heroId)]
         
         //2)armamos la request pasandole la url que creamos
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = URLComponents.query?.data(using: .utf8)
         request.setValue("Bearer \(self.token!)", forHTTPHeaderField: "Authorization")
-        
+
         //3)comenzamos el llamado a la request
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             
