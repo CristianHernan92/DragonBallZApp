@@ -4,6 +4,7 @@ class HeroeTableViewCell: UITableViewCell {
     
     weak var navigationControllerReference: UINavigationController? = nil
     var heroId: String? = nil
+    var transformationsDataList: [CellData]? 
     
     //MARK: OUTLETS
     @IBOutlet weak var descriptionOfCell: UILabel!
@@ -12,16 +13,37 @@ class HeroeTableViewCell: UITableViewCell {
     
     //MARK: ACTIONS
     @IBAction func showHeroDetail(_ sender: Any) {
-            //creamos y mostramos otra instancia de TableViewController con la celda de detalle del heroe
-        
             //creamos el array de tipo "CellData" que contrendrá los datos para la celda de la tabla
-            var cellDataList : [CellData] = []
-            cellDataList.append(CellData.init(title: self.titleOfCell.text!, description: self.descriptionOfCell.text!, image: (URL:nil,UIImage:self.imageOfCell.image!),heroId: self.heroId))
-            
-            DispatchQueue.main.async {
-                self.navigationControllerReference!.pushViewController(
-                    TableViewController(navigatorTitle: self.titleOfCell.text!, hidesBackButtonOfNavigator: false, cellDataList: cellDataList,nameOfCellToUse: "HeroeDetailTableViewCell", identifierOfCellToUse: "HeroDetailCell", heigthOfCell: 725.0),
-                    animated: true)
+            var heroDetailData : [CellData] = []
+            heroDetailData.append(CellData.init(title: self.titleOfCell.text!, description: self.descriptionOfCell.text!, image: CellDataImage(URL: nil, UIImage: self.imageOfCell.image!),heroId: nil))
+        
+            //si transformationsDataList está vacía quiere decir que la tableview se usara para mostrar la lista de heroes, sino la de transformaciones
+            if (self.transformationsDataList == []){
+                //llamamos a la api que trae todas las transformaciones según el id del heroe, para verificar si tiene o no transformaciones el heroe seleccionado
+                    DragonBallZNetworkModel.getHeroeTransformations(heroId: heroId!){data, error in
+                        guard error == nil else {
+                            print("Error: \(String(describing: error))")
+                            return
+                        }
+                        
+                        //creamos el array de tipo "CellData" que contrendrá los datos para las celdas de la tabla cuando se use para mostrar la lista de transformaciones
+                        for HeroTransformation in (data as [HeroTransformation]) {
+                            self.transformationsDataList!.append(CellData.init(title: HeroTransformation.name, description: HeroTransformation.description, image: CellDataImage(URL: HeroTransformation.photo, UIImage: nil),heroId: nil))
+                        }
+                        
+                        DispatchQueue.main.async {
+                            self.navigationControllerReference!.pushViewController(
+                                TableViewController(navigatorTitle: self.titleOfCell.text!, hidesBackButtonOfNavigator: false, cellDataList: heroDetailData,nameOfCellToUse: "HeroeDetailTableViewCell", identifierOfCellToUse: "HeroDetailCell", heigthOfCell: 725.0, transformationsDataList: self.transformationsDataList),
+                                animated: true)
+                        }
+                    }
+            }
+            else{
+                DispatchQueue.main.async {
+                    self.navigationControllerReference!.pushViewController(
+                        TableViewController(navigatorTitle: self.titleOfCell.text!, hidesBackButtonOfNavigator: false, cellDataList: heroDetailData,nameOfCellToUse: "HeroeDetailTableViewCell", identifierOfCellToUse: "HeroDetailCell", heigthOfCell: 725.0, transformationsDataList: self.transformationsDataList),
+                        animated: true)
+                }
             }
     }
 }

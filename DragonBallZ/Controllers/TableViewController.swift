@@ -8,14 +8,16 @@ final class TableViewController: UITableViewController {
     let identifierOfCellToUse : String
     let cellDataList: [CellData]
     let heigthOfCell: CGFloat
+    let transformationsDataList: [CellData]?
     
-    init(navigatorTitle: String,hidesBackButtonOfNavigator: Bool,cellDataList: [CellData],nameOfCellToUse: String,identifierOfCellToUse : String,heigthOfCell: CGFloat) {
+    init(navigatorTitle: String,hidesBackButtonOfNavigator: Bool,cellDataList: [CellData],nameOfCellToUse: String,identifierOfCellToUse : String,heigthOfCell: CGFloat,transformationsDataList: [CellData]?) {
         self.navigatorTitle = navigatorTitle
         self.hidesBackButtonOfNavigator = hidesBackButtonOfNavigator
         self.nameOfCellToUse = nameOfCellToUse
         self.identifierOfCellToUse = identifierOfCellToUse
         self.cellDataList = cellDataList
         self.heigthOfCell = heigthOfCell
+        self.transformationsDataList = transformationsDataList
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -57,6 +59,7 @@ final class TableViewController: UITableViewController {
             cell.heroId = cellDataList[indexPath.row].heroId
             cell.titleOfCell.text = cellDataList[indexPath.row].title
             cell.descriptionOfCell.text = cellDataList[indexPath.row].description
+            cell.transformationsDataList = transformationsDataList
                 
             let task = URLSession.shared.dataTask(with: cellDataList[indexPath.row].image.URL!) { (data, response, error) in
                         guard error == nil else {
@@ -88,7 +91,6 @@ final class TableViewController: UITableViewController {
         func returnHeroeDetailTableViewCellFilled() -> HeroeDetailTableViewCell{
             //instanciamos la celda peronalizada que registramos más arriba en la tabla y lo casteamos al tipo de dicha celda para poder luego asignarles valor a sus atributos
             let cell = tableView.dequeueReusableCell(withIdentifier: identifierOfCellToUse, for: indexPath) as! HeroeDetailTableViewCell
-            cell.heroId = cellDataList[indexPath.row].heroId
             cell.titleOfCell.text = cellDataList[indexPath.row].title
             cell.descriptionOfCell.text = cellDataList[indexPath.row].description
             cell.imageOfCell.image = cellDataList[indexPath.row].image.UIImage
@@ -96,10 +98,13 @@ final class TableViewController: UITableViewController {
             //pasamos la referencia del "NavigationController" para que la celda pueda manejarla
             cell.navigationControllerReference = self.navigationController
             
-            //si no hay id quiere decir que es una vista de una transformación asique se debe ocultar el botón de transformaciones
-            if(cellDataList[indexPath.row].heroId == nil){
+            //si la lista de transformaciones está vacía ocultamos el botón de transformaciones
+            if(transformationsDataList == [] || transformationsDataList == nil){
                 cell.buttonOfTransformations.isEnabled = false
                 cell.buttonOfTransformations.isHidden = true
+            }
+            else{
+                cell.transformationsDataList = transformationsDataList!
             }
                     
             return cell
@@ -113,9 +118,13 @@ final class TableViewController: UITableViewController {
 }
 
 //struct CellData
-struct CellData {
+struct CellData: Equatable {
     let title: String
     let description: String
-    let image: (URL:URL?,UIImage:UIImage?)
-    let heroId: String?
+    let image: CellDataImage
+    var heroId: String?
+}
+struct CellDataImage: Equatable{
+    let URL: URL?
+    let UIImage:UIImage?
 }

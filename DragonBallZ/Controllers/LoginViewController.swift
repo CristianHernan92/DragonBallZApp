@@ -28,17 +28,16 @@ final class LoginViewController: UIViewController {
                     //creamos el array de tipo "CellData" que contrendrá los datos para las celdas de la tabla
                     var cellDataList : [CellData] = []
                     for Hero in (data as [Hero]) {
-                        cellDataList.append(CellData.init(title: Hero.name, description: Hero.description, image: (URL:Hero.photo,UIImage:nil), heroId: Hero.id))
+                        cellDataList.append(CellData.init(title: Hero.name, description: Hero.description, image: CellDataImage(URL: Hero.photo, UIImage: nil), heroId: Hero.id))
                     }
                     
                     //creamos y mostramos la tableview con el listado de heroes
                     DispatchQueue.main.async {
                         self.navigationController?.pushViewController(
-                            TableViewController(navigatorTitle: "Heroes", hidesBackButtonOfNavigator: true, cellDataList: cellDataList,nameOfCellToUse: "HeroeTableViewCell", identifierOfCellToUse: "HeroCell", heigthOfCell: 125.0),
+                            TableViewController(navigatorTitle: "Heroes", hidesBackButtonOfNavigator: true, cellDataList: cellDataList,nameOfCellToUse: "HeroeTableViewCell", identifierOfCellToUse: "HeroCell", heigthOfCell: 125.0,transformationsDataList: []),
                             animated: true)
                     }
             }
         }
-        
     }
 }

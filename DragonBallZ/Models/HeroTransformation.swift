@@ -1,6 +1,6 @@
 import Foundation
 
-struct HeroTransformation: Codable {
+struct HeroTransformation: Codable, Equatable{
     let id: String
     let name: String
     let description: String
@@ -8,6 +8,6 @@ struct HeroTransformation: Codable {
     let hero:HeroID
 }
 
-struct HeroID: Codable {
+struct HeroID: Codable, Equatable {
     let id: String
 }
