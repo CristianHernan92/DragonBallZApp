@@ -1,2 +1,2 @@
 # DragonBallZApp
-Cración de una aplicación de iOS en XCode con el patrón de diseño MVC
+Mi primera creación de una app en el sistema iOS con XCode para el trabajo práctico de KeepCoding® 🖥 
