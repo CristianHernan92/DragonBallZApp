@@ -10,7 +10,7 @@ final class LoginViewController: UIViewController {
     }
     //MARK: Actions
     @IBAction func LoginButtonAction(_ sender: UIButton) {
-        
+        let DragonBallZNetworkModel = DragonBallZNetworkModel()
         //DragonBallZNetworkModel.login(email: EmailTextField.text!, password: PasswordTextField.text!)
         DragonBallZNetworkModel.login(email: "cristianhernandelrio@gmail.com", password: "KQFhbcuj9Hwgf39") { error in
                 guard error==nil else {

@@ -30,7 +30,7 @@ final class TableViewController: UITableViewController {
         navigationItem.hidesBackButton = hidesBackButtonOfNavigator
         navigationItem.title = navigatorTitle
         
-        //registramos celda personalizada que creamos con su identificador que le hayamos puesto
+        //registramos la celda personalizada con el identificador que le hayamos puesto
         let nib = UINib(nibName: nameOfCellToUse, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: identifierOfCellToUse)
     }
@@ -98,7 +98,7 @@ final class TableViewController: UITableViewController {
             //pasamos la referencia del "NavigationController" para que la celda pueda manejarla
             cell.navigationControllerReference = self.navigationController
             
-            //si la lista de transformaciones está vacía ocultamos el botón de transformaciones
+            //si la lista de transformaciones está vacía o es nil ocultamos el botón de transformaciones
             if(transformationsDataList == [] || transformationsDataList == nil){
                 cell.buttonOfTransformations.isEnabled = false
                 cell.buttonOfTransformations.isHidden = true
@@ -117,7 +117,7 @@ final class TableViewController: UITableViewController {
     }
 }
 
-//struct CellData
+//struct CellData 
 struct CellData: Equatable {
     let title: String
     let description: String

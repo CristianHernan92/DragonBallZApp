@@ -1,9 +1,21 @@
 import Foundation
 
+struct DragonBallZNetworkModelToken{
+    //DragonBallZNetworkModelToken
+    static var token:String? = nil
+}
+
 final class DragonBallZNetworkModel{
     
+    //el session que se usara en todo el DragonBallZNetworkModel, en las task de las funciones
+    //cuando se instancie la clase DragonBallZNetworkModel session tendrá el valor por defecto ".shared", pero cuando instanciemos la clase en el archivo de test le pasaremos por parametro la session que se usara para el test
+    private var session: URLSession
+    init (session: URLSession = .shared) {
+        self.session = session
+    }
+    
     //armamos los errores posibles a aparecer
-    enum NetworkError:Error {
+    enum NetworkError:Error,Equatable {
         case unknown
         case malformedUrl
         case decodingFailed
@@ -13,15 +25,12 @@ final class DragonBallZNetworkModel{
         case noToken
     }
     
-    //DragonBallZNetworkModelToken
-    static var token:String? = nil
-    
     //"/api/auth/login/"
     //login (debe ser correcto el nombre y la password)
-    static func login (email: String, password: String, completion: @escaping (NetworkError?)-> Void ){
+    func login (email: String, password: String, completion: @escaping (NetworkError?)-> Void ){
         
         //1)armamos los componentes de la url y mediante ella creamos la url que se le va a pasar al request
-        var URLComponents=URLComponents()
+        var URLComponents = URLComponents()
         URLComponents.scheme = "https"
         URLComponents.host = "dragonball.keepcoding.education"
         URLComponents.path = "/api/auth/login"
@@ -42,10 +51,10 @@ final class DragonBallZNetworkModel{
         request.setValue("Basic \(base64loginstring)", forHTTPHeaderField: "Authorization")
         
         //3)comenzamos el llamado a la request
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let task = session.dataTask(with: request) { data, response, error in
             
             //verificamos que no hay habido ningún error en la llamada
-            guard error==nil else {
+            guard error == nil else {
                 completion(NetworkError.unknown)
                 return
             }
@@ -68,7 +77,7 @@ final class DragonBallZNetworkModel{
                 return
             }
             
-            self.token = token
+            DragonBallZNetworkModelToken.token = token
             completion(nil)
         }
         task.resume()
@@ -76,7 +85,7 @@ final class DragonBallZNetworkModel{
 
     //"/api/heros/all"
     //devolvemos la lista de heroes
-    static func getHeroesList (completion: @escaping ([Hero],NetworkError?) -> Void ){
+    func getHeroesList (completion: @escaping ([Hero],NetworkError?) -> Void ){
         
         //1)armamos los componentes de la url y mediante ella creamos la url que se le va a pasar al request
         var URLComponents = URLComponents()
@@ -94,10 +103,10 @@ final class DragonBallZNetworkModel{
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = URLComponents.query?.data(using: .utf8)
-        request.setValue("Bearer \(self.token!)", forHTTPHeaderField: "Authorization")
+        request.setValue("Bearer \(DragonBallZNetworkModelToken.token!)", forHTTPHeaderField: "Authorization")
         
         //3)comenzamos el llamado a la request
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let task = session.dataTask(with: request) { data, response, error in
             
             //verificamos que no hay habido ningún error en la llamada
             guard error==nil else {
@@ -130,7 +139,7 @@ final class DragonBallZNetworkModel{
     
     //"/api/heros/tranformations"
     //devolvemos la lista de transformaciones del heroe
-    static func getHeroeTransformations (heroId: String,completion: @escaping ([HeroTransformation],NetworkError?) -> Void ){
+    func getHeroeTransformations (heroId: String,completion: @escaping ([HeroTransformation],NetworkError?) -> Void ){
         
         //1)armamos los componentes de la url y mediante ella creamos la url que se le va a pasar al request
         var URLComponents = URLComponents()
@@ -147,10 +156,10 @@ final class DragonBallZNetworkModel{
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = URLComponents.query?.data(using: .utf8)
-        request.setValue("Bearer \(self.token!)", forHTTPHeaderField: "Authorization")
+        request.setValue("Bearer \(DragonBallZNetworkModelToken.token!)", forHTTPHeaderField: "Authorization")
 
         //3)comenzamos el llamado a la request
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let task = session.dataTask(with: request) { data, response, error in
             
             //verificamos que no hay habido ningún error en la llamada
             guard error==nil else {

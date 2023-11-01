@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  DragonBallZ
-//
-//  Created by Cristian Hernán Del Río on 10/10/2023.
-//
-
 import UIKit
 
 @main

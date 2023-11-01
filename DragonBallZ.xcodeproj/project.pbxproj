@@ -18,11 +18,22 @@
 		F1694F002ADE407200892A1E /* HeroeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1694EFE2ADE407200892A1E /* HeroeDetailTableViewCell.swift */; };
 		F1694F012ADE407200892A1E /* HeroeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1694EFF2ADE407200892A1E /* HeroeDetailTableViewCell.xib */; };
 		F1694F062AE1AF6F00892A1E /* HeroTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1694F052AE1AF6F00892A1E /* HeroTransformation.swift */; };
+		F1694F152AE5EF8300892A1E /* DragonBallZNetworkModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1694F142AE5EF8300892A1E /* DragonBallZNetworkModelTest.swift */; };
 		F1CCD8F92AD787E500D40ADA /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CCD8F72AD787E500D40ADA /* TableViewController.swift */; };
 		F1CCD8FA2AD787E500D40ADA /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1CCD8F82AD787E500D40ADA /* TableViewController.xib */; };
 		F1CCD9012AD78D9A00D40ADA /* HeroeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CCD8FF2AD78D9A00D40ADA /* HeroeTableViewCell.swift */; };
 		F1CCD9022AD78D9A00D40ADA /* HeroeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1CCD9002AD78D9A00D40ADA /* HeroeTableViewCell.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F1694F0F2AE5EE6200892A1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F16870F12AD633A40032BB4B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F16870F82AD633A40032BB4B;
+			remoteInfo = DragonBallZ;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F16870F92AD633A40032BB4B /* DragonBallZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragonBallZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +49,8 @@
 		F1694EFE2ADE407200892A1E /* HeroeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroeDetailTableViewCell.swift; sourceTree = "<group>"; };
 		F1694EFF2ADE407200892A1E /* HeroeDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroeDetailTableViewCell.xib; sourceTree = "<group>"; };
 		F1694F052AE1AF6F00892A1E /* HeroTransformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTransformation.swift; sourceTree = "<group>"; };
+		F1694F0B2AE5EE6200892A1E /* DragonBallZTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DragonBallZTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1694F142AE5EF8300892A1E /* DragonBallZNetworkModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBallZNetworkModelTest.swift; sourceTree = "<group>"; };
 		F1CCD8F72AD787E500D40ADA /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		F1CCD8F82AD787E500D40ADA /* TableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
 		F1CCD8FF2AD78D9A00D40ADA /* HeroeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroeTableViewCell.swift; sourceTree = "<group>"; };
@@ -52,6 +65,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F1694F082AE5EE6200892A1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -59,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				F16870FB2AD633A40032BB4B /* DragonBallZ */,
+				F1694F0C2AE5EE6200892A1E /* DragonBallZTests */,
 				F16870FA2AD633A40032BB4B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				F16870F92AD633A40032BB4B /* DragonBallZ.app */,
+				F1694F0B2AE5EE6200892A1E /* DragonBallZTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,8 +101,8 @@
 				F16871102AD634070032BB4B /* Controllers */,
 				F16870FC2AD633A40032BB4B /* AppDelegate.swift */,
 				F16870FE2AD633A40032BB4B /* SceneDelegate.swift */,
-				F16871052AD633A60032BB4B /* Assets.xcassets */,
 				F16871072AD633A60032BB4B /* LaunchScreen.storyboard */,
+				F16871052AD633A60032BB4B /* Assets.xcassets */,
 				F168710A2AD633A60032BB4B /* Info.plist */,
 			);
 			path = DragonBallZ;
@@ -118,6 +140,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		F1694F0C2AE5EE6200892A1E /* DragonBallZTests */ = {
+			isa = PBXGroup;
+			children = (
+				F1694F142AE5EF8300892A1E /* DragonBallZNetworkModelTest.swift */,
+			);
+			path = DragonBallZTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +168,24 @@
 			productReference = F16870F92AD633A40032BB4B /* DragonBallZ.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F1694F0A2AE5EE6200892A1E /* DragonBallZTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1694F112AE5EE6200892A1E /* Build configuration list for PBXNativeTarget "DragonBallZTests" */;
+			buildPhases = (
+				F1694F072AE5EE6200892A1E /* Sources */,
+				F1694F082AE5EE6200892A1E /* Frameworks */,
+				F1694F092AE5EE6200892A1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F1694F102AE5EE6200892A1E /* PBXTargetDependency */,
+			);
+			name = DragonBallZTests;
+			productName = DragonBallZTests;
+			productReference = F1694F0B2AE5EE6200892A1E /* DragonBallZTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -150,6 +198,11 @@
 				TargetAttributes = {
 					F16870F82AD633A40032BB4B = {
 						CreatedOnToolsVersion = 15.0;
+					};
+					F1694F0A2AE5EE6200892A1E = {
+						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
+						TestTargetID = F16870F82AD633A40032BB4B;
 					};
 				};
 			};
@@ -167,6 +220,7 @@
 			projectRoot = "";
 			targets = (
 				F16870F82AD633A40032BB4B /* DragonBallZ */,
+				F1694F0A2AE5EE6200892A1E /* DragonBallZTests */,
 			);
 		};
 /* End PBXProject section */
@@ -182,6 +236,13 @@
 				F1694F012ADE407200892A1E /* HeroeDetailTableViewCell.xib in Resources */,
 				F16871062AD633A60032BB4B /* Assets.xcassets in Resources */,
 				F16871142AD634270032BB4B /* LoginViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1694F092AE5EE6200892A1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +265,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F1694F072AE5EE6200892A1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1694F152AE5EF8300892A1E /* DragonBallZNetworkModelTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F1694F102AE5EE6200892A1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F16870F82AD633A40032BB4B /* DragonBallZ */;
+			targetProxy = F1694F0F2AE5EE6200892A1E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F16871072AD633A60032BB4B /* LaunchScreen.storyboard */ = {
@@ -395,6 +472,45 @@
 			};
 			name = Release;
 		};
+		F1694F122AE5EE6200892A1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2V6HX2J9BY;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Organizacio-n-de-Cristian.DragonBallZTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DragonBallZ.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DragonBallZ";
+			};
+			name = Debug;
+		};
+		F1694F132AE5EE6200892A1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2V6HX2J9BY;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Organizacio-n-de-Cristian.DragonBallZTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DragonBallZ.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DragonBallZ";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -412,6 +528,15 @@
 			buildConfigurations = (
 				F168710E2AD633A60032BB4B /* Debug */,
 				F168710F2AD633A60032BB4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1694F112AE5EE6200892A1E /* Build configuration list for PBXNativeTarget "DragonBallZTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1694F122AE5EE6200892A1E /* Debug */,
+				F1694F132AE5EE6200892A1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

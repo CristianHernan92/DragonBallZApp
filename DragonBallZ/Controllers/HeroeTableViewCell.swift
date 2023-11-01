@@ -13,13 +13,14 @@ class HeroeTableViewCell: UITableViewCell {
     
     //MARK: ACTIONS
     @IBAction func showHeroDetail(_ sender: Any) {
-            //creamos el array de tipo "CellData" que contrendrá los datos para la celda de la tabla
+            //creamos el array de tipo "CellData" en donde pondremos los datos que ya contiene la vista para usarlos en la vista de detalle
             var heroDetailData : [CellData] = []
             heroDetailData.append(CellData.init(title: self.titleOfCell.text!, description: self.descriptionOfCell.text!, image: CellDataImage(URL: nil, UIImage: self.imageOfCell.image!),heroId: nil))
         
             //si transformationsDataList está vacía quiere decir que la tableview se usara para mostrar la lista de heroes, sino la de transformaciones
             if (self.transformationsDataList == []){
-                //llamamos a la api que trae todas las transformaciones según el id del heroe, para verificar si tiene o no transformaciones el heroe seleccionado
+                    let DragonBallZNetworkModel = DragonBallZNetworkModel()
+                    //llamamos a la api que trae todas las transformaciones según el id del heroe
                     DragonBallZNetworkModel.getHeroeTransformations(heroId: heroId!){data, error in
                         guard error == nil else {
                             print("Error: \(String(describing: error))")
